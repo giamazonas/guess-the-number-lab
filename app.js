@@ -2,54 +2,43 @@
 
 const game = {
   title: 'Guess the Number!',
-  biggestNum: 100,
+  biggestNum: 10,
   smallestNum: 1, 
   prevGuesses: [],
   secretNum: null,
-
-  getGuess: function() {
-    let guess; 
-    do {
-      guess = parseInt (prompt(`Enter a guess between ${this.smallestNum} and ${this.biggestNum}.`)
-    )}
-    while
-    (isNaN(guess) || guess > this.biggestNum || guess < this.smallestNum)
-    return guess
-  },
 
   play: function() {
     this.secretNum = Math.floor(Math.random() * 
       (this.biggestNum - this.smallestNum + 1)) + this.smallestNum;
       
       do {
-        this.prevGuesses.push(this.getGuess() 
-        )
-      }
-      while ( 
-        // this.getGuess !==
+        this.prevGuesses.push(this.getGuess() ) 
+        this.render()
+        console.log(this.prevGuesses)
+        // prompt (`Try again! Enter a guess between ${this.smallestNum} and ${this.biggestNum}.`)
+      }while ( 
         this.prevGuesses[this.prevGuesses.length -1] !== this.secretNum)
       },
     
-  render: function(){
-    let joined = preGuesses.join()
+  getGuess: function() {
+    let guess; 
+    do {
+      guess = parseInt (prompt(`Enter a guess between ${this.smallestNum} and ${this.biggestNum}.`))
+    }while
+    (isNaN(guess) || guess > this.biggestNum || guess < this.smallestNum)
+    return guess 
+  },
 
-    if (this.secretNum === getGuess) {
-    `Congrats! You guessed the number in ${prevGuesses.length}!`}  
+  render: function() {
+    if(this.secretNum === this.prevGuesses[this.prevGuesses.length -1] ){
+    alert(`Congrats! You guessed the number in ${this.prevGuesses.length}!`)
+    }else{ 
+    alert(`Your guess is too ${this.high||this.low}. 
+    Previous guesses: ${this.prevGuesses.join}.`)
+  }
+//     let high = this.guess > this.biggestNum;
+//     let low = this.guess < this.smallestNum;
+}
+}
 
-    } else (this.secretNum !== getGuess) {
-    `Your guess is too ${spectrum} Previous guesses: ${joined}.`}
-    
-  spectrum = function() 
-      if (this.secretNum < getGuess){
-        return "high"
-      }else (this.secretNum > getGuess){
-        return "low"
-      }
-    }
-
-
-// play calls this after guess has been made(alerts)
-// if secret guessed, congrats message
-// else ...
-//use interpolation
-/// array.join method
+// game.play()
