@@ -31,7 +31,7 @@ const game = {
   },
 
   render: function() {
-    let high = this.prevGuesses[this.prevGuesses.length -1] > this.biggestNum;
+    // let high = this.prevGuesses[this.prevGuesses.length -1] > this.biggestNum;
     if(this.secretNum === this.prevGuesses[this.prevGuesses.length -1] ){
     alert(`Congrats! You guessed the number in ${this.prevGuesses.length}!`)
     }else if(
