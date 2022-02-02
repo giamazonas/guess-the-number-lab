@@ -31,17 +31,11 @@ const game = {
   },
 
   render: function() {
-    // let high = this.prevGuesses[this.prevGuesses.length -1] > this.biggestNum;
-    if(this.secretNum === this.prevGuesses[this.prevGuesses.length -1] ){
-    alert(`Congrats! You guessed the number in ${this.prevGuesses.length}!`)
-    }else if(
-      this.prevGuesses[this.prevGuesses.length -1] > this.biggestNum )(
-      alert(`Your guess is too high. 
-      Previous guesses: ${this.prevGuesses.join(', ')}.`)
-    )
-    else (
-      alert(`Your guess is too low. Previous guesses: ${this.prevGuesses.join(', ')}.`)
-      )
+    if( this.secretNum === this.prevGuesses[this.prevGuesses.length -1]) {
+    alert(`Congrats! You guessed the number in ${this.prevGuesses.length}!`) }
+    else if (this.prevGuesses[this.prevGuesses.length -1] > this.secretNum ){alert(`Your guess is too high. 
+    //   Previous guesses: ${this.prevGuesses.join(', ')}.`)}
+    else {alert(`Your guess is too low. Previous guesses: ${this.prevGuesses.join(', ')}.`)}
     }
 }
 
